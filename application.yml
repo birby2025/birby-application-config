@@ -33,6 +33,12 @@ spring:
     listener:
       ack-mode: manual_immediate
       concurrency: 3
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type.descriptor.sql.BasicBinder: TRACE
 grpc:
   client:
     user-account-service:
