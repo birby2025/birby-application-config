@@ -1,3 +1,24 @@
+spring:
+  kafka:
+    bootstrap-servers: ${DOCKER_KAFKA_BOOTSTRAP_SERVERS}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: user-public-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.birby.project.user_shared_library
+    listener:
+      ack-mode: manual_immediate
+      concurrency: 3
+grpc:
+  client:
+    user-account-service:
+      address: ${GLOBAL_USER_ACCOUNT_SERVICE_HOSTNAME}
+      port: ${GLOBAL_USER_ACCOUNT_SERVICE_HTTP_PORT}
 eureka:
   instance:
     prefer-ip-address: true
