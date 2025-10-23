@@ -43,7 +43,7 @@ grpc:
   client:
     user-account-service:
       address: ${GLOBAL_USER_ACCOUNT_SERVICE_HOSTNAME}
-      port: ${GLOBAL_USER_ACCOUNT_SERVICE_HTTP_PORT}
+      port: ${GLOBAL_USER_ACCOUNT_SERVICE_GRPC_PORT}
 eureka:
   instance:
     prefer-ip-address: true
