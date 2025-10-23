@@ -46,7 +46,7 @@ grpc:
       port: ${GLOBAL_USER_ACCOUNT_SERVICE_GRPC_PORT}
 eureka:
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: false
   client:
     register-with-eureka: true
     fetch-registry: true
