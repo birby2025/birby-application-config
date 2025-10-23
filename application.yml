@@ -1,4 +1,7 @@
 spring:
+  cloud:
+    loadbalancer:
+      enabled: true
   jpa:
     hibernate:
       ddl-auto: none
